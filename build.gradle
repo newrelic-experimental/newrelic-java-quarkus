@@ -1,0 +1,200 @@
+// Build.gradle for creating or installing new instrumentation modules
+
+
+// Global defaults - override here or in individual modules as needed.
+buildscript {
+  repositories {
+    flatDir dirs: 'template-lib'
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+  }
+
+  dependencies {
+    classpath 'gradle-templates:gradle-templates:1.5'
+    classpath 'com.newrelic.agent.java:gradle-verify-instrumentation-plugin:3.2'
+  }
+}
+
+plugins {
+  id "de.undercouch.download" version "1.2"
+}
+
+project.ext {
+  group = 'com.newrelic.instrumentation'
+  javaAgentVersion = '6.4.0'
+
+  // Aligned with minimum Java major version supported by latest Java Agent
+  javaVersion = JavaVersion.VERSION_1_8
+
+}
+
+apply plugin: 'java'
+apply plugin: 'de.undercouch.download'
+
+import templates.*
+import de.undercouch.gradle.tasks.download.Download
+
+task getAgent(type: Download) {
+   def rootProject = projectDir.path
+   src 'https://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/'+project.javaAgentVersion+'/newrelic-agent-'+project.javaAgentVersion+'.jar'
+   dest projectDir.path+"/libs/newrelic-agent-"+project.javaAgentVersion+".jar"
+}
+
+task extractJars(type: Copy) {
+
+    from zipTree(projectDir.path+"/libs/newrelic-agent-"+project.javaAgentVersion+".jar")
+    into projectDir.path+"/libs"
+}
+
+task cleanUp(type: Delete) {
+  delete projectDir.path+'/libs/META-INF', projectDir.path+'/libs/com', projectDir.path+'/libs/mozilla'
+  delete projectDir.path+'/libs/LICENSE', projectDir.path+'/libs/Log4j-events.dtd', projectDir.path+'/libs/THIRD_PARTY_NOTICES.md'
+  delete fileTree(projectDir.path+'/libs') {
+    include '**/*.xsd'
+    include '**/*.xml'
+    include '**/*.yml'
+    include '**/*.properties'
+  }
+}
+
+task checkForDependencies(type: Exec) {
+    environment "JAVAAGENTVERSION", javaAgentVersion
+    def rootProject = projectDir.path
+    def cmdLine = rootProject+'/newrelic-dependencies.sh'
+    workingDir rootProject
+    commandLine  cmdLine
+
+}
+
+task buildIfNeeded {
+   dependsOn checkForDependencies
+   dependsOn jar
+   tasks.findByName('jar').mustRunAfter 'checkForDependencies'
+}
+
+task createModule {
+  dependsOn checkForDependencies
+  description = 'Generate project files for a new instrumentation module'
+  group = 'New Relic'
+  doLast {
+
+    def rootProject = projectDir.path
+
+    String projectGroup = TemplatesPlugin.prompt('Instrumentation Module Group (default: ' + project.ext.group + ') (Hit return to use default):\n')
+    String projectName = TemplatesPlugin.prompt('Instrumentation Module Name:\n')
+
+    if (projectName == null) {
+      throw new Exception("Please specify a valid module name.")
+    } else {
+      projectName = projectName.trim()
+    }
+
+    if (projectGroup == null || projectGroup.trim() == '') {
+      projectGroup = project.ext.group
+    } else {
+      projectGroup = projectGroup.trim()
+    }
+
+    def projectLibDir = new File(rootProject+'/lib')
+
+    def projectPath = new File(projectName)
+    if (projectPath.exists()) {
+      throw new Exception(projectPath.path + ' already exists.')
+    }
+
+    def projectJava = new File(projectPath, 'src/main/java')
+    def projectTest = new File(projectPath, 'src/test/java')
+    mkdir projectJava
+    mkdir projectTest
+
+    ProjectTemplate.fromRoot(projectPath) {
+       'build.gradle' '''
+        // Build.gradle generated for instrumentation module PROJECT_NAME
+
+        apply plugin: 'java'
+
+        dependencies {
+           // Declare a dependency on each JAR you want to instrument
+           // Example:
+           // implementation 'javax.servlet:servlet-api:2.5'
+
+           // New Relic Java Agent dependencies
+           implementation 'com.newrelic.agent.java:newrelic-agent:JAVA_AGENT_VERSION'
+           implementation 'com.newrelic.agent.java:newrelic-api:JAVA_AGENT_VERSION'
+           implementation fileTree(include: ['*.jar'], dir: '../libs')
+           implementation fileTree(include: ['*.jar'], dir: '../test-lib')
+        }
+
+        jar {
+          manifest {
+            attributes 'Implementation-Title': 'PROJECT_GROUP.PROJECT_NAME'
+            attributes 'Implementation-Vendor': 'New Relic'
+            attributes 'Implementation-Vendor-Id': 'com.newrelic'
+            attributes 'Implementation-Version': 1.0
+          }
+        }
+
+        verifyInstrumentation {
+          // Verifier plugin documentation:
+          // https://github.com/newrelic/newrelic-gradle-verify-instrumentation
+          // Example:
+          // passes 'javax.servlet:servlet-api:[2.2,2.5]'
+          // exclude 'javax.servlet:servlet-api:2.4.public_draft'
+        }'''.replace('PROJECT_GROUP', projectGroup)
+            .replace('PROJECT_NAME', projectName)
+            .replace('PROJECT_PATH', projectPath.path)
+            .replace('JAVA_AGENT_VERSION', project.ext.javaAgentVersion)
+     }
+
+     File settings = new File('settings.gradle')
+     settings.append("include '$projectName'\n")
+     println "Created module in $projectPath.path."
+  }
+}
+
+subprojects {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  apply plugin: 'java'
+  apply plugin: 'eclipse'
+  apply plugin: 'idea'
+  apply plugin: 'com.newrelic.gradle-verify-instrumentation-plugin'
+
+  sourceCompatibility = project.javaVersion
+  targetCompatibility = project.javaVersion
+
+  dependencies {
+    testImplementation  fileTree(dir: '../lib', include: "*.jar") // + project.javaAgentVersion
+    testImplementation 'org.nanohttpd:nanohttpd:2.3.1'
+    testImplementation 'com.newrelic.agent.java:newrelic-agent:' + project.javaAgentVersion
+  }
+
+  task install(dependsOn: buildIfNeeded, type: Copy) {
+    description = 'Copies compiled jar to the NEW_RELIC_EXTENSIONS_DIR.'
+    group  = 'New Relic'
+
+    def extDir = System.getenv("NEW_RELIC_EXTENSIONS_DIR") ?: " "
+
+    from jar
+    into extDir
+  }
+
+  install.doFirst  {
+    def extDir = System.getenv("NEW_RELIC_EXTENSIONS_DIR")
+     if (extDir == null) {
+         throw new Exception("Must set NEW_RELIC_EXTENSIONS_DIR.")
+     }
+
+     if (extDir.startsWith("~" + File.separator)) {
+         extDir = System.getProperty("user.home") + extDir.substring(1);
+     }
+
+     if (!file(extDir).directory) {
+         throw new Exception(extDir + "NEW_RELIC_EXTENSIONS_DIR, set as '" + extDir + "'is not a valid directory.")
+     }
+  }
+}
