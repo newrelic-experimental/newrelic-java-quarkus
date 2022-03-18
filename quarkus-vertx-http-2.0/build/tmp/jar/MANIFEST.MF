@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: com.newrelic.instrumentation.quarkus-vertx-http-2.
+ 0
+Implementation-Vendor: New Relic
+Implementation-Vendor-Id: com.newrelic
+Implementation-Version: 1.0
+

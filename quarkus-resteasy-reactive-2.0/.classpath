@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive/2.0.0.Final/quarkus-resteasy-reactive-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive/2.0.0.Final/quarkus-resteasy-reactive-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-agent/6.4.0/e640c171a471a3cf07a6ab7c248640ffc9e10953/newrelic-agent-6.4.0-sources.jar" kind="lib" path="/Users/dhilpipre/.gradle/caches/modules-2/files-2.1/com.newrelic.agent.java/newrelic-agent/6.4.0/716c0521d4baa12d9f2b0a005e1ee06a9c180214/newrelic-agent-6.4.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/com/newrelic/agent/java/newrelic-api/6.4.0/newrelic-api-6.4.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/com/newrelic/agent/java/newrelic-api/6.4.0/newrelic-api-6.4.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive-kotlin/2.0.0.Final/quarkus-resteasy-reactive-kotlin-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive-kotlin/2.0.0.Final/quarkus-resteasy-reactive-kotlin-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive-vertx/2.0.0.Final/resteasy-reactive-vertx-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive-vertx/2.0.0.Final/resteasy-reactive-vertx-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive-common/2.0.0.Final/quarkus-resteasy-reactive-common-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-resteasy-reactive-common/2.0.0.Final/quarkus-resteasy-reactive-common-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive/2.0.0.Final/resteasy-reactive-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive/2.0.0.Final/resteasy-reactive-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive-common/2.0.0.Final/resteasy-reactive-common-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/resteasy/reactive/resteasy-reactive-common/2.0.0.Final/resteasy-reactive-common-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.1.Final/jboss-jaxrs-api_2.1_spec-2.0.1.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.1.Final/jboss-jaxrs-api_2.1_spec-2.0.1.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-http/2.0.0.Final/quarkus-vertx-http-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-http/2.0.0.Final/quarkus-vertx-http-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-jsonp/2.0.0.Final/quarkus-jsonp-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-jsonp/2.0.0.Final/quarkus-jsonp-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-http-dev-console-runtime-spi/2.0.0.Final/quarkus-vertx-http-dev-console-runtime-spi-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-http-dev-console-runtime-spi/2.0.0.Final/quarkus-vertx-http-dev-console-runtime-spi-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/vertx/vertx-web/4.1.0/vertx-web-4.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/vertx/vertx-web/4.1.0/vertx-web-4.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-mutiny/2.0.0.Final/quarkus-mutiny-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-mutiny/2.0.0.Final/quarkus-mutiny-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-core/2.0.0.Final/quarkus-vertx-core-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-vertx-core/2.0.0.Final/quarkus-vertx-core-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-security-runtime-spi/2.0.0.Final/quarkus-security-runtime-spi-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-security-runtime-spi/2.0.0.Final/quarkus-security-runtime-spi-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-smallrye-context-propagation/2.0.0.Final/quarkus-smallrye-context-propagation-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-smallrye-context-propagation/2.0.0.Final/quarkus-smallrye-context-propagation-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-netty/2.0.0.Final/quarkus-netty-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-netty/2.0.0.Final/quarkus-netty-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-arc/2.0.0.Final/quarkus-arc-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-arc/2.0.0.Final/quarkus-arc-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-core/2.0.0.Final/quarkus-core-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-core/2.0.0.Final/quarkus-core-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/arc/arc/2.0.0.Final/arc-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/arc/arc/2.0.0.Final/arc-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/reactive/mutiny-smallrye-context-propagation/0.17.0/mutiny-smallrye-context-propagation-0.17.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/reactive/mutiny-smallrye-context-propagation/0.17.0/mutiny-smallrye-context-propagation-0.17.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation/1.2.0/smallrye-context-propagation-1.2.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation/1.2.0/smallrye-context-propagation-1.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation-api/1.2.0/smallrye-context-propagation-api-1.2.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation-api/1.2.0/smallrye-context-propagation-api-1.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/1.2.5/jakarta.interceptor-api-1.2.5-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/1.2.5/jakarta.interceptor-api-1.2.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/logging/commons-logging-jboss-logging/1.0.0.Final/commons-logging-jboss-logging-1.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/logging/commons-logging-jboss-logging/1.0.0.Final/commons-logging-jboss-logging-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/security/quarkus-security/1.1.4.Final/quarkus-security-1.1.4.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/security/quarkus-security/1.1.4.Final/quarkus-security-1.1.4.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config/2.3.0/smallrye-config-2.3.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config/2.3.0/smallrye-config-2.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/threads/jboss-threads/3.4.0.Final/jboss-threads-3.4.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/threads/jboss-threads/3.4.0.Final/jboss-threads-3.4.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-bootstrap-runner/2.0.0.Final/quarkus-bootstrap-runner-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-bootstrap-runner/2.0.0.Final/quarkus-bootstrap-runner-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config-core/2.3.0/smallrye-config-core-2.3.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config-core/2.3.0/smallrye-config-core-2.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-expression/1.6.0/smallrye-common-expression-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-expression/1.6.0/smallrye-common-expression-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-function/1.6.0/smallrye-common-function-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-function/1.6.0/smallrye-common-function-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-constraint/1.6.0/smallrye-common-constraint-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-constraint/1.6.0/smallrye-common-constraint-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config-common/2.3.0/smallrye-config-common-2.3.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/config/smallrye-config-common/2.3.0/smallrye-config-common-2.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/glassfish/jakarta.json/1.1.6/jakarta.json-1.1.6-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/glassfish/jakarta.json/1.1.6/jakarta.json-1.1.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/inject/jakarta.inject-api/1.0/jakarta.inject-api-1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/inject/jakarta.inject-api/1.0/jakarta.inject-api-1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/reactive/mutiny/0.17.0/mutiny-0.17.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/reactive/mutiny/0.17.0/mutiny-0.17.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-annotation/1.6.0/smallrye-common-annotation-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-annotation/1.6.0/smallrye-common-annotation-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-haproxy/4.1.65.Final/netty-codec-haproxy-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-haproxy/4.1.65.Final/netty-codec-haproxy-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/vertx/vertx-web-common/4.1.0/vertx-web-common-4.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/vertx/vertx-web-common/4.1.0/vertx-web-common-4.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/vertx/vertx-auth-common/4.1.0/vertx-auth-common-4.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/vertx/vertx-auth-common/4.1.0/vertx-auth-common-4.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/vertx/vertx-bridge-common/4.1.0/vertx-bridge-common-4.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/vertx/vertx-bridge-common/4.1.0/vertx-bridge-common-4.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/vertx/vertx-core/4.1.0/vertx-core-4.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/vertx/vertx-core/4.1.0/vertx-core-4.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-ide-launcher/2.0.0.Final/quarkus-ide-launcher-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-ide-launcher/2.0.0.Final/quarkus-ide-launcher-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-development-mode-spi/2.0.0.Final/quarkus-development-mode-spi-2.0.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/quarkus/quarkus-development-mode-spi/2.0.0.Final/quarkus-development-mode-spi-2.0.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/logmanager/jboss-logmanager-embedded/1.0.9/jboss-logmanager-embedded-1.0.9-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/logmanager/jboss-logmanager-embedded/1.0.9/jboss-logmanager-embedded-1.0.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/logging/jboss-logging-annotations/2.2.1.Final/jboss-logging-annotations-2.2.1.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/logging/jboss-logging-annotations/2.2.1.Final/jboss-logging-annotations-2.2.1.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/jboss/slf4j/slf4j-jboss-logmanager/1.1.0.Final/slf4j-jboss-logmanager-1.1.0.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/jboss/slf4j/slf4j-jboss-logmanager/1.1.0.Final/slf4j-jboss-logmanager-1.1.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/graalvm/sdk/graal-sdk/21.1.0/graal-sdk-21.1.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/graalvm/sdk/graal-sdk/21.1.0/graal-sdk-21.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/wildfly/common/wildfly-common/1.5.4.Final-format-001/wildfly-common-1.5.4.Final-format-001-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/wildfly/common/wildfly-common/1.5.4.Final-format-001/wildfly-common-1.5.4.Final-format-001.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/ejb/jakarta.ejb-api/3.2.6/jakarta.ejb-api-3.2.6-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/ejb/jakarta.ejb-api/3.2.6/jakarta.ejb-api-3.2.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/eclipse/microprofile/context-propagation/microprofile-context-propagation-api/1.2/microprofile-context-propagation-api-1.2-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/eclipse/microprofile/context-propagation/microprofile-context-propagation-api/1.2/microprofile-context-propagation-api-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-http2/4.1.65.Final/netty-codec-http2-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-http2/4.1.65.Final/netty-codec-http2-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-handler-proxy/4.1.65.Final/netty-handler-proxy-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-handler-proxy/4.1.65.Final/netty-handler-proxy-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-http/4.1.65.Final/netty-codec-http-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-http/4.1.65.Final/netty-codec-http-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-resolver-dns/4.1.65.Final/netty-resolver-dns-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-resolver-dns/4.1.65.Final/netty-resolver-dns-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-socks/4.1.65.Final/netty-codec-socks-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-socks/4.1.65.Final/netty-codec-socks-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-dns/4.1.65.Final/netty-codec-dns-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec-dns/4.1.65.Final/netty-codec-dns-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-codec/4.1.65.Final/netty-codec-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-codec/4.1.65.Final/netty-codec-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-transport/4.1.65.Final/netty-transport-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-transport/4.1.65.Final/netty-transport-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-buffer/4.1.65.Final/netty-buffer-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-buffer/4.1.65.Final/netty-buffer-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-resolver/4.1.65.Final/netty-resolver-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-resolver/4.1.65.Final/netty-resolver-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/netty/netty-common/4.1.65.Final/netty-common-4.1.65.Final-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/netty/netty-common/4.1.65.Final/netty-common-4.1.65.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.11.3/jackson-core-2.11.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-io/1.6.0/smallrye-common-io-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-io/1.6.0/smallrye-common-io-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/jakarta/transaction/jakarta.transaction-api/1.3.3/jakarta.transaction-api-1.3.3-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/jakarta/transaction/jakarta.transaction-api/1.3.3/jakarta.transaction-api-1.3.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation-storage/1.2.0/smallrye-context-propagation-storage-1.2.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/smallrye-context-propagation-storage/1.2.0/smallrye-context-propagation-storage-1.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/eclipse/microprofile/config/microprofile-config-api/2.0/microprofile-config-api-2.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/eclipse/microprofile/config/microprofile-config-api/2.0/microprofile-config-api-2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-classloader/1.6.0/smallrye-common-classloader-1.6.0-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/io/smallrye/common/smallrye-common-classloader/1.6.0/smallrye-common-classloader-1.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/dhilpipre/.m2/repository/org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1-sources.jar" kind="lib" path="/Users/dhilpipre/.m2/repository/org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/agent-bridge-datastore.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/agent-bridge.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/newrelic-agent-6.4.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/newrelic-weaver-scala-api.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/newrelic-weaver-api.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/libs/newrelic-api.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dhilpipre/Open-Source/newrelic-java-quarkus/test-lib/instrumentation-test.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>
