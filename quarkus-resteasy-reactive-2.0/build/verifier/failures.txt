@@ -1,1 +1,0 @@
-quarkus-resteasy-reactive-2.0 io.quarkus:quarkus-resteasy-reactive:2.6.0.Final
