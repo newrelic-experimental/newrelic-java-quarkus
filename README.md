@@ -14,7 +14,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-java-quarkus)
 ![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-java-quarkus)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-java-quarkus)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-java-quarkus)
+![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-java-quarkus) 
 
 
 # New Relic Java Instrumentation for the Quarkus Framework
@@ -38,10 +38,6 @@ If you make changes to the instrumentation code and need to build the instrument
 a. To build one jar, run the command:  gradlew _moduleName_:clean  _moduleName_:install    
 b. To build all jars, run the command: gradlew clean install
 3. Restart the application
-
-## Testing
-
-The source code contains simple tests for testing Uni and Multi
 
 ## Support
 
