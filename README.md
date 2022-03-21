@@ -39,10 +39,6 @@ a. To build one jar, run the command:  gradlew _moduleName_:clean  _moduleName_:
 b. To build all jars, run the command: gradlew clean install
 3. Restart the application
 
-## Testing
-
-The source code contains simple tests for testing Uni and Multi
-
 ## Support
 
 New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
