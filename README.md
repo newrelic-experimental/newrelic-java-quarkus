@@ -14,7 +14,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/newrelic-java-quarkus)
 ![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/newrelic-java-quarkus)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/newrelic-java-quarkus)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-java-quarkus)
+![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/newrelic-java-quarkus) 
 
 
 # New Relic Java Instrumentation for the Quarkus Framework
