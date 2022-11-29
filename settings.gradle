@@ -1,4 +1,6 @@
 rootProject.name = 'java-instrumentation-template'
 include 'quarkus-resteasy-2.0'
+include 'quarkus-resteasy-2.11'
+include 'quarkus-resteasy-2.14.1'
 include 'quarkus-resteasy-reactive-2.0'
 include 'quarkus-vertx-2.0'
