@@ -4,7 +4,7 @@
 apply plugin: 'java'
 
 dependencies {
-   implementation group: 'io.quarkus', name: 'quarkus-resteasy', version: '2.0.0.Final'
+   implementation group: 'io.quarkus', name: 'quarkus-resteasy', version: '2.14.1.Final'
 
    // New Relic Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:6.4.0'
@@ -23,6 +23,7 @@ jar {
 }
 
 verifyInstrumentation {
-	passes 'io.quarkus:quarkus-resteasy:[2.0.0.Final,2.11.0)'
+	passes 'io.quarkus:quarkus-resteasy:[2.14.1.Final,)'
     excludeRegex '.*CR.*'
+    excludeRegex '.*Alpha.*'
 }
