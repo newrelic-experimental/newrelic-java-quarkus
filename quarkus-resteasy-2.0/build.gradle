@@ -23,5 +23,6 @@ jar {
 }
 
 verifyInstrumentation {
-	passes 'io.quarkus:quarkus-resteasy:[2.0.0.Final,)'
+	passes 'io.quarkus:quarkus-resteasy:[2.0.0.Final,2.11.0]'
+    excludeRegex '.*CR.*'
 }
