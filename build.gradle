@@ -21,7 +21,7 @@ plugins {
 }
 
 project.ext {
-  group = 'com.newrelic.instrumentation'
+  group = 'com.newrelic.instrumentation.labs'
   javaAgentVersion = '6.4.0'
 
   // Aligned with minimum Java major version supported by latest Java Agent
@@ -76,7 +76,7 @@ task buildIfNeeded {
 task createModule {
   dependsOn checkForDependencies
   description = 'Generate project files for a new instrumentation module'
-  group = 'New Relic'
+  group = 'New Relic Labs'
   doLast {
 
     def rootProject = projectDir.path
@@ -119,7 +119,7 @@ task createModule {
            // Example:
            // implementation 'javax.servlet:servlet-api:2.5'
 
-           // New Relic Java Agent dependencies
+           // New Relic Labs Java Agent dependencies
            implementation 'com.newrelic.agent.java:newrelic-agent:JAVA_AGENT_VERSION'
            implementation 'com.newrelic.agent.java:newrelic-api:JAVA_AGENT_VERSION'
            implementation fileTree(include: ['*.jar'], dir: '../libs')
@@ -129,8 +129,8 @@ task createModule {
         jar {
           manifest {
             attributes 'Implementation-Title': 'PROJECT_GROUP.PROJECT_NAME'
-            attributes 'Implementation-Vendor': 'New Relic'
-            attributes 'Implementation-Vendor-Id': 'com.newrelic'
+            attributes 'Implementation-Vendor': 'New Relic Labs'
+            attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
             attributes 'Implementation-Version': 1.0
           }
         }
@@ -175,7 +175,7 @@ subprojects {
 
   task install(dependsOn: buildIfNeeded, type: Copy) {
     description = 'Copies compiled jar to the NEW_RELIC_EXTENSIONS_DIR.'
-    group  = 'New Relic'
+    group  = 'New Relic Labs'
 
     def extDir = System.getenv("NEW_RELIC_EXTENSIONS_DIR") ?: " "
 

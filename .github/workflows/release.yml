@@ -1,0 +1,217 @@
+name: Build and Release (Manual Run) v1.3
+
+on: 
+ workflow_dispatch: # This event allows manual triggering
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: 'temurin'
+
+
+      - name: Set Extensions Dir
+        id: set_ext_dir
+        run: |
+          echo "Setting Extensions Dir..."
+          mkdir ${HOME}/release
+          mkdir /tmp/to
+          echo "NEW_RELIC_EXTENSIONS_DIR=${HOME}/release" >> $GITHUB_ENV
+
+      - name: Build with Gradle and verifyInstrumentation
+        run: |
+          . ./newrelic-dependencies.sh
+          ./gradlew clean build install verifyInstrumentation
+
+      - name: Identify Release Type
+        id: define_release_type
+        run: |
+           echo "Generating changelog to check type of release..."
+           old_tag=$(git describe --abbrev=0 --tags 2>/dev/null) || true
+           if [[ -n "$old_tag" ]]; then
+            changelog=$(git log --pretty=format:"- %s (%h)" $old_tag..HEAD)
+           fi
+           if echo "$changelog" | grep -iqE '\bBREAKING CHANGE\b'; then
+            echo "RELEASE_TYPE=major" >> $GITHUB_ENV
+           elif echo "$changelog" | grep -iqE '\bfeat\b'; then
+            echo "RELEASE_TYPE=minor" >> $GITHUB_ENV
+           else
+            echo "RELEASE_TYPE=patch" >> $GITHUB_ENV
+           fi
+           
+      - name: Set release version
+        id: set_release_version
+        run: |
+          major_version=1
+          minor_version=0
+          patch_revision=1
+
+          # Retrieve the latest release tag
+          latest_tag=$(git describe --abbrev=0 --tags 2>/dev/null) || true
+          echo "LATEST_TAG=${latest_tag}" >> $GITHUB_ENV
+
+          if [[ -n "$latest_tag" && $latest_tag == v* ]]; then
+            # Extract the major and minor versions from the latest tag
+            current_major_version=$(echo $latest_tag | cut -d'.' -f1 | sed 's/v//')
+            current_minor_version=$(echo $latest_tag | cut -d'.' -f2)
+            current_patch_revision=$(echo $latest_tag | cut -d'.' -f3)
+    
+            if [ "${{ env.RELEASE_TYPE }}" = "major" ]; then
+              major_version=$((current_major_version +1 ))
+            elif [ "${{ env.RELEASE_TYPE }}" = "minor" ]; then
+              minor_version=$((current_minor_version + 1))
+              major_version=$((current_major_version))
+            else
+              patch_revision=$((current_patch_revision + 1))
+              minor_version=$((current_minor_version))
+              major_version=$((current_major_version))
+            fi
+         
+          fi
+
+          # Set the release version environment variable
+          release_version="v${major_version}.${minor_version}.${patch_revision}"
+          echo "RELEASE_VERSION=${release_version}" >> $GITHUB_ENV
+
+      - name: Set Tag
+        id: set_tag
+        run: echo "::set-output name=tag::${{ env.RELEASE_VERSION }}"
+
+      - name: Set release name
+        id: set_release_name
+        run: |
+          repo_name="${{ github.repository }}"
+          sanitized_repo_name=$(echo "$repo_name" | awk -F 'newrelic-java-' '{print $2}')
+          echo "RELEASE_NAME=${sanitized_repo_name}-instrumentation-" >> $GITHUB_ENV
+          previous_tag=$(git describe --abbrev=0 --tags HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)
+
+      - name: Create Archive
+        run: |
+          echo "CURRENT=${PWD}" >> $GITHUB_ENV
+          cd ${HOME}/release
+          zip -r /tmp/to/${{ env.RELEASE_NAME}}${{ steps.set_tag.outputs.tag }}.zip *.jar
+          cd ${{env.CURRENT}}
+
+      
+
+      - name: Create Release
+        id: create_release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+                var changelog = ``;
+                var tag = '' + `${{ steps.set_tag.outputs.tag }}`;
+                const archivePath = '/tmp/to/${{ env.RELEASE_NAME}}${{ steps.set_tag.outputs.tag }}.zip';
+                var response = await github.rest.repos.createRelease({
+                  draft:false,
+                  generate_release_notes:true,
+                  name:tag,
+                  owner:context.repo.owner,
+                  prerelease:false,
+                  repo:context.repo.repo,
+                  tag_name:tag,
+                  body:changelog
+                });
+
+                core.exportVariable('RELEASE_ID', response.data.id);
+                core.exportVariable('RELEASE_URL', response.data.html_url);
+                core.exportVariable('RELEASE_UPLOAD_URL', response.data.upload_url);
+              } catch (error) {
+                core.setFailed(error.message);
+              }
+      - name: Upload Release Artifacts
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          asset_path: /tmp/to/${{ env.RELEASE_NAME}}${{ steps.set_tag.outputs.tag }}.zip
+          asset_name: ${{ env.RELEASE_NAME}}${{ steps.set_tag.outputs.tag }}.zip
+          upload_url: ${{ env.RELEASE_UPLOAD_URL }}
+          asset_content_type: application/zip
+     
+      - name: "Generate release changelog"
+        id: github_changelog
+        uses: Helmisek/conventional-changelog-generator@v1.0.6-release
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          commit-types: "fix:Bug Fixes,feat:Features,doc:Documentation,build:Build Upgrades,BREAKING CHANGE:Enhancements"
+          template-path: ".github/workflows/CHANGELOG.tpl.md"
+         
+     
+      - name: update CHANGELOG.md
+        run: |
+          # Content to add at the top
+          # Get the current date in YYYY-MM-DD format
+          release_date=$(date +"%Y-%m-%d")
+          version="## Version: [${{env.RELEASE_VERSION}}](${{ env.RELEASE_URL }}) | Created: $release_date"
+          content="$version${{steps.github_changelog.outputs.changelog}}"
+
+          # Existing file
+          file="CHANGELOG.md"
+
+          # Create a temporary file with the content at the top and existing content below
+          
+          echo "$content" > temp_file.txt
+          cat "$file" >> temp_file.txt
+
+          # Overwrite the original file with the updated content
+          mv temp_file.txt "$file"
+          
+          # Commit the updated CHANGELOG.md file
+           git add CHANGELOG.md
+           git config --local user.email "action@github.com"
+           git config --local user.name "GitHub Action"
+           git commit -m "Update Changelog for Release [skip ci]"
+
+          # Push the changes to the remote repository
+           git push --quiet --set-upstream origin HEAD
+      
+      - name: Get Compare URL
+        run: |
+            compare=$(echo ${{ env.RELEASE_URL }} | sed 's/releases\/tag.*/compare/')
+            compareurl=$(echo "\nFull Changelog: ($compare/${{ env.LATEST_TAG }}...${{ steps.set_tag.outputs.tag }})")
+            echo "COMPAREURL=${compareurl}" >> $GITHUB_ENV
+            
+      - name: Update Release
+        id: update_release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+                
+                
+                var changelog = `${{steps.github_changelog.outputs.changelog}}` + `${{env.COMPAREURL}}` ;
+                var release_id = `${{env.RELEASE_ID}}`;
+                var tag = '' + `${{ steps.set_tag.outputs.tag }}`;
+                const archivePath = '/tmp/to/${{ env.RELEASE_NAME}}${{ steps.set_tag.outputs.tag }}.zip';
+                var _response = await github.rest.repos.updateRelease({
+                  draft:false,
+                  generate_release_notes:true,
+                  owner:context.repo.owner,
+                  repo: context.repo.repo,
+                  prerelease:false,
+                  release_id:release_id,
+                  body:changelog
+                });
+
+                core.exportVariable('RELEASE_ID', _response.data.id);
+                core.exportVariable('RELEASE_URL', _response.data.html_url);
+                core.exportVariable('RELEASE_UPLOAD_URL', _response.data.upload_url);
+              } catch (error) {
+                core.setFailed(error.message);
+              }
+
