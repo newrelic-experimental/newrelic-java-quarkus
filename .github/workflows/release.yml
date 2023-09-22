@@ -53,7 +53,7 @@ jobs:
       - name: Set release version
         id: set_release_version
         run: |
-          major_version=1
+          major_version=2
           minor_version=0
           patch_revision=1
 
