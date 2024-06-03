@@ -14,11 +14,10 @@ import io.vertx.core.http.HttpServerResponse;
 @Weave
 public abstract class RequestDispatcher {
 
-	@Trace
-	public void service(Context context,
-            HttpServerRequest req,
-            HttpServerResponse resp,
-            HttpRequest vertxReq, HttpResponse vertxResp, boolean handleNotFound) {
-		Weaver.callOriginal();
-	}
+    @Trace
+    public void service(Context context, HttpServerRequest req, HttpServerResponse resp, HttpRequest vertxReq,
+	    HttpResponse vertxResp, boolean handleNotFound) {
+
+	Weaver.callOriginal();
+    }
 }

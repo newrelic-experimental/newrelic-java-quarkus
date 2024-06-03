@@ -14,23 +14,24 @@ import io.vertx.ext.web.RoutingContext;
 @Weave
 public class VertxRequestHandler {
 
-	@Trace
-	public void handle(RoutingContext request) {
-		HashMap<String, Object> attributes = new HashMap<String, Object>();
-		Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", request.normalizedPath());
-		Utils.addRoute(attributes, request.currentRoute());
-		NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
+    @Trace
+    public void handle(RoutingContext request) {
+	HashMap<String, Object> attributes = new HashMap<String, Object>();
+	Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", request.normalizedPath());
+	Utils.addRoute(attributes, request.currentRoute());
+	NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
+	Utils.setTransactionName(request);
+	Weaver.callOriginal();
+    }
 
-		Weaver.callOriginal();
-	}
+    @Trace
+    private void dispatch(RoutingContext routingContext, InputStream is, VertxOutput output) {
+	HashMap<String, Object> attributes = new HashMap<String, Object>();
+	Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", routingContext.normalizedPath());
+	Utils.addRoute(attributes, routingContext.currentRoute());
+	NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
 
-	@Trace
-	private void dispatch(RoutingContext routingContext, InputStream is, VertxOutput output) {
-		HashMap<String, Object> attributes = new HashMap<String, Object>();
-		Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", routingContext.normalizedPath());
-		Utils.addRoute(attributes, routingContext.currentRoute());
-		NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
-		Weaver.callOriginal();
-	}
+	Weaver.callOriginal();
+    }
 
 }
