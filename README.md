@@ -20,13 +20,29 @@
 
 Provides instrumentation for the Quarkus framework.  This includes the following Quarkus implemented frameworks: Resteasy, Resteasy Reactive and Vert.x
 
-## Installation
+# Installation
 
-This use this instrumentation.   
-1. Download the latest release.    
-2. In the New Relic Java Agent directory (directory containing newrelic.jar), create a directory named extensions if it doe not already exist.   
-3. Copy the jars into the extensions directory.   
-4. Restart the application.  
+## Instructions for Using This Instrumentation
+
+1. **Download the Latest Release**
+   - Ensure you have the latest version of the instrumentation package.
+
+2. **Prepare the New Relic Java Agent Directory**
+   - Navigate to the New Relic Java Agent directory where `newrelic.jar` is located.
+   - If it doesn't already exist, create a directory named `extensions` within the Java Agent directory.
+
+3. **Copy the JAR Files**
+   - Copy the JAR files from the downloaded release into the newly created `extensions` directory.
+
+4. **Restart Your Application**
+   - Restart your application to apply the new instrumentation.
+
+5. **Run Transactions**
+   - Execute the transactions you want to monitor.
+
+6. **Verify in New Relic**
+   - Go to the 'APM and Services' tab in New Relic.
+   - Explore the 'Transactions' and 'Distributed Traces' sections to view traces related to your application.
 
 
 ## Building
