@@ -13,13 +13,13 @@ import io.vertx.ext.web.RoutingContext;
 @Weave
 public abstract class ResteasyReactiveVertxHandler {
 
-    @Trace
-    public void handle(RoutingContext event) {
-	HashMap<String, Object> attributes = new HashMap<String, Object>();
-	Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", event.normalizedPath());
-	Utils.addRoute(attributes, event.currentRoute());
-	NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
-	Utils.setTransactionName(event);
-	Weaver.callOriginal();
-    }
+	@Trace
+	public void handle(RoutingContext event) {
+		HashMap<String, Object> attributes = new HashMap<String, Object>();
+		Utils.addAttribute(attributes, "RoutingContext-NormalizedPath", event.normalizedPath());
+		Utils.addRoute(attributes, event.currentRoute());
+		NewRelic.getAgent().getTracedMethod().addCustomAttributes(attributes);
+		Utils.setTransactionName(event);
+		Weaver.callOriginal();
+	}
 }
