@@ -25,7 +25,11 @@ Provides instrumentation for the Quarkus framework.  This includes the following
 ## Instructions for Using This Instrumentation
 
 1. **Download the Latest Release**
-   - Ensure you have the latest version of the instrumentation package.
+   - Ensure you have the latest version of the following instrumentation pacakges :
+   - [Quarkus](https://github.com/newrelic-experimental/newrelic-java-quarkus/releases)
+   - [Smallrye](https://github.com/newrelic-experimental/newrelic-java-smallrye/releases)
+   - [Jboss executors ](https://github.com/newrelic-experimental/newrelic-java-jboss-executors/releases)
+   - [Vertx](https://github.com/newrelic/newrelic-java-vertx/releases)
 
 2. **Prepare the New Relic Java Agent Directory**
    - Navigate to the New Relic Java Agent directory where `newrelic.jar` is located.
