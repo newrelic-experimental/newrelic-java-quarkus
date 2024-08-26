@@ -11,14 +11,15 @@ import io.vertx.core.eventbus.Message;
 @Weave(type = MatchType.BaseClass)
 public abstract class EventConsumerInvoker {
 
-	@Trace(dispatcher = true)
-	public void invoke(Message<Object> message) {
-		NewRelic.getAgent().getTracedMethod().setMetricName("Custom","EventConsumerInvoker","invoke");
-		Weaver.callOriginal();
-	}
-	
-	protected Object invokeBean(Message<Object> message) {
-		NewRelic.getAgent().getTracedMethod().setMetricName("Custom","EventConsumerInvoker",getClass().getSimpleName(),"invokeBean");
-		return Weaver.callOriginal();
-	}
+    @Trace(dispatcher = true)
+    public void invoke(Message<Object> message) {
+	NewRelic.getAgent().getTracedMethod().setMetricName("Custom", "EventConsumerInvoker", "invoke");
+	Weaver.callOriginal();
+    }
+
+    protected Object invokeBean(Message<Object> message) {
+	NewRelic.getAgent().getTracedMethod().setMetricName("Custom", "EventConsumerInvoker",
+		getClass().getSimpleName(), "invokeBean");
+	return Weaver.callOriginal();
+    }
 }
