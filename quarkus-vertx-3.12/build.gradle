@@ -4,7 +4,7 @@
 apply plugin: 'java'
 
 dependencies {
-   implementation 'io.quarkus:quarkus-vertx:2.0.0.Final'
+   implementation 'io.quarkus:quarkus-vertx:3.12.0'
 
    // New Relic Labs Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:6.4.0'
@@ -15,7 +15,7 @@ dependencies {
 
 jar {
   manifest {
-    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.quarkus-vertx-2.0'
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.quarkus-vertx-3.12'
     attributes 'Implementation-Vendor': 'New Relic Labs'
     attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
     attributes 'Implementation-Version': 1.0
@@ -23,7 +23,7 @@ jar {
 }
 
 verifyInstrumentation {
-	passes 'io.quarkus:quarkus-vertx:[2.0.0.Final,3.12.0)'
-	excludeRegex '.*3.12.0'
-	excludeRegex '.*3.12.0.CR1'
+	passes 'io.quarkus:quarkus-vertx:[3.12.0,)'
+	//excludeRegex '.*3.13.0'
+	//excludeRegex '.*3.12.0.CR1'
 }
