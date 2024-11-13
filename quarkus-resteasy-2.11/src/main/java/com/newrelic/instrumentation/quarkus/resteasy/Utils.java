@@ -39,7 +39,6 @@ public class Utils {
 	if (method != null & method.length() > 0) {
 	    name += " (" + method + ")";
 	}
-	System.out.println(name);
 	NewRelic.getAgent().getTransaction().setTransactionName(TransactionNamePriority.FRAMEWORK_LOW, false, "Quarkus",
 		"resteasy", name);
 
