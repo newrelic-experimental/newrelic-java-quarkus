@@ -1,3 +1,7 @@
+## Version: [v2.2.1](https://github.com/newrelic-experimental/newrelic-java-quarkus/releases/tag/v2.2.1) | Created: 2024-11-26
+
+
+
 ## Version: [v2.0.1](https://github.com/newrelic-experimental/newrelic-java-quarkus/releases/tag/v2.0.1) | Created: 2023-10-16
 ### Build Upgrades
 - Updated vendor title and added release workflow
